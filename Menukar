@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void PassByValue(int a, int b)
+{
+    // variabel temporary untuk menukar nilai
+    int swap = a;
+    a = b;
+    b = swap;
+}
+
+void PassByReference(int *a, int *b)
+{
+    // variabel temporary untuk menukar nilai
+    int swap = *a;
+    *a = *b;
+    *b = swap;
+}
+
+int main()
+{
+    int num1 = 55, num2 = 77; // deklarasi dan inisialisasi variabel
+
+    printf("======================================================\n");
+    printf("===============\033[1;32mPROGRAM MENUKAR BILANGAN\033[0m===============\n"); // saya memberikan warna hijau
+    printf("======================================================\n\n");
+    printf("Nilai Awal dari Num1 dan Num2\n");
+    printf("num1 : %d \n", num1);   // menampilkan nilai awal variabel num1
+    printf("num2 : %d \n\n", num2); // menampilkan nilai awal variabel num2
+
+    printf("Nilai Setelah Pass by Value dari Num1 dan Num2\n");
+    PassByValue(num1, num2);        // tidak terjadi penukaran nilai karena parameter yang dikirimkan ke void PassByValue berupa nilai
+    printf("num1 : %d \n", num1);   // menampilkan nilai variabel num1 setelah Pass by Value
+    printf("num2 : %d \n\n", num2); // menampilkan nilai variabel num2 setelah Pass by Value
+
+    printf("Nilai Setelah Pass by Reference dari Num1 dan Num2\n");
+    PassByReference(&num1, &num2);  // terjadi penukaran nilai karena parameter yang dikirimkan ke void PassByReference berupa alamat memori
+    printf("num1 : %d \n", num1);   // menampilkan nilai variabel num1 setelah Pass by Reference
+    printf("num2 : %d \n\n", num2); // menampilkan nilai variabel num2 setelah Pass by Reference
+
+    printf("======================================================\n");
+    printf("======\033[1;32mTERIMA KASIH TELAH MENGGUNAKAN PROGRAM KAMI\033[0m=====\n"); // saya memberi warna hijau
+    printf("======================================================\n\n");
+    return 0;
+}
