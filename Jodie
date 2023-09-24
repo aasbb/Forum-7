@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h> //library untuk fungsi strcpy
+
+int main()
+{
+    char nama1[20];  // deklarasi variabel nama1 yang berisi 20 elements
+    char *nama2;     // deklarasi variabel nama2 yang memiliki pointer
+    char *nama3[20]; // deklarasi variabel nama3 yang berisi 20 elements yang masing-masing index arraynya memiliki pointer
+
+    strcpy(nama1, "Brisia Jodie"); // fungsi dari library string.h yang berfungsi untuk meng-copy sebuah string ke dalam variabel nama1
+    printf("%s\n", nama1);         // perintah menampilkan
+    nama2 = "Brisia Jodie";        // inisialisasi pointer nama2 untuk menunjuk ke string "Brisia Jodie"
+    printf("%s\n", nama2);         // perintah menampilkan
+    nama3[0] = "Brisia Jodie";     // inisialisasi index array ke-1 (0) dari nama3 untuk menunjuk ke string "Brisia Jodie"
+    printf("%s\n", nama3[0]);      // perintah menampilkan
+
+    return 0;
+}
